@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header className="flex justify-between px-4 py-2 bg-black bg-opacity-80 text-white items-center shadow sticky top-0 z-10">
       <Link href="/" className="font-extrabold text-2xl">
-        Chat-app
+        Σ Chat-app
       </Link>
       {user ? (
         <DropDown

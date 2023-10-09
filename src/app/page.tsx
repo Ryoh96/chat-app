@@ -8,7 +8,6 @@ import firebase_app from '@/firebase/config'
 import Chat from './components/organisms/Chat'
 import { AuthGuard } from './components/utils/AuthGuard'
 import { useAuthContext } from './contexts/AuthContext'
-import Loading from './loading'
 
 export default function Home() {
   const [message, setMessage] = useState('')
@@ -90,11 +89,11 @@ export default function Home() {
                   <input
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="px-2 py-2 rounded-lg text-sm min-w-[220px] text-black"
+                    className="px-2 py-2 rounded-lg text-sm min-w-[220px] text-black md:w-[500px]"
                     placeholder="つぶやきを入力"
                   />
                 </label>
-                <button className="bg-black py-2 px-3 rounded-full text-sm ring-1 ring-white hover:opacity-40">
+                <button className="bg-black py-2 px-3 rounded-full text-sm ring-1 ring-white hover:opacity-40 disabled:hover:opacity-100 disabled:ring-gray-400 disabled:text-gray-400" disabled={message.length === 0}>
                   つぶやく
                 </button>
               </div>
