@@ -10,7 +10,7 @@ const Button = ({ children, loading, variant, disabled, ...props }: Props) => {
   return (
     <button
       disabled={loading || disabled}
-      className="bg-black py-3 px-4 rounded shadow bg-opacity-40 hover:bg-opacity-30"
+      className="bg-black py-3 px-4 rounded shadow bg-opacity-40 hover:bg-opacity-30 text-white"
       {...props}
     >
       {loading ? <Spinner color="white" variant="small" /> : children}

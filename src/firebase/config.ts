@@ -16,8 +16,9 @@ const firebaseConfig = {
   storageBucket: FIREBASE_STORAGE_BUCKET,
   messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
   appId: FIREBASE_APP_ID,
-};
+}
 
-let firebase_app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+let firebase_app =
+  getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0]
 
-export default firebase_app;
+export default firebase_app
