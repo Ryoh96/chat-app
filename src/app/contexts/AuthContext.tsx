@@ -2,24 +2,34 @@
 
 import type { User } from 'firebase/auth'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
 import firebase_app from '../../firebase/config'
 import Spinner from '../components/atoms/Spinner'
 
 const auth = getAuth(firebase_app)
 
-export const AuthContext = React.createContext<User | null>(null)
+type AuthContextProps = {
+  user: User | null | undefined;
+  signInCheck: boolean;
+};
 
-export const useAuthContext = () => React.useContext(AuthContext)
+const AuthContext = createContext<AuthContextProps>({
+  user: undefined,
+  signInCheck: false,
+});
+
+export const useAuthContext = () => useContext(AuthContext)
 
 export const AuthContextProvider = ({
   children,
 }: {
   children: React.ReactNode
 }) => {
-  const [user, setUser] = useState<User | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [user, setUser] =
+    useState<User | null | undefined>(undefined);
+
+  const [signInCheck, setSignInCheck] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -28,15 +38,10 @@ export const AuthContextProvider = ({
       } else {
         setUser(null)
       }
-      setLoading(false)
     })
 
     return () => unsubscribe()
   }, [])
 
-  return (
-    <AuthContext.Provider value={user}>
-      {loading ? <Spinner /> : children}
-    </AuthContext.Provider>
-  )
+  return <AuthContext.Provider value={{ user, signInCheck }}>{children}</AuthContext.Provider>
 }

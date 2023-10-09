@@ -2,9 +2,7 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 
-import Footer from './components/layouts/Footer'
 import Header from './components/layouts/Header'
-import { AuthGuard } from './components/utils/AuthGuard'
 import { AuthContextProvider } from './contexts/AuthContext'
 
 export const metadata: Metadata = {
@@ -24,7 +22,7 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">{children}</main>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </AuthContextProvider>
       </body>

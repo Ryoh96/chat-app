@@ -3,7 +3,7 @@ type Props = {
   color?: string
 }
 
-const Spinner = ({ variant = 'default', color = 'border-red-500' }: Props) => {
+const Spinner = ({ variant = 'default', color = 'border-pink-500' }: Props) => {
   return (
     <div
       className={`animate-spin rounded-full border-2 ${color} border-t-transparent mx-auto ${

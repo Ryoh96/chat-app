@@ -1,16 +1,19 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 import { useAuthContext } from '../../../contexts/AuthContext'
 
 export const AuthGuard = ({ children }: { children: React.ReactNode }) => {
-  const user = useAuthContext()
+  const {user} = useAuthContext()
   const router = useRouter()
-  if (user === null) {
-    router.push('/signIn')
-    return null
-  }
+
+  useEffect(() => {
+    if (user === null) {
+      router.push('/signIn');
+    }
+  }, [user, router]);
 
   return <>{children}</>
 }

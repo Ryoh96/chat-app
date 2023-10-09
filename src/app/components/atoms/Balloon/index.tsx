@@ -5,7 +5,6 @@ const Balloon = ({
   children: React.ReactNode
   direction?: 'right' | 'left'
 }) => {
-  console.log(direction)
   return (
     <div className="overflow-visible">
       <div
