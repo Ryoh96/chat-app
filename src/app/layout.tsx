@@ -8,6 +8,7 @@ import { AuthContextProvider } from './contexts/AuthContext'
 export const metadata: Metadata = {
   title: 'Chat App',
   description: 'Realtime chat app',
+  manifest: "/public/manifest.json"
 }
 
 export default function RootLayout({
