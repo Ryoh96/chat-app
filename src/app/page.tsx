@@ -9,7 +9,7 @@ import useScrollDown from './hooks/useScrollDown'
 
 export default function Home() {
   const { user } = useAuthContext()
-  const { chats } = useReadChats('chat')
+  const { chats } = useReadChats('chat-nora')
   useScrollDown(chats)
 
   return (
@@ -35,7 +35,7 @@ export default function Home() {
         </div>
         <div className="mx-auto text-center ">
           <div className="fixed bottom-0 w-full">
-            <MessageSender room="chat" />
+            <MessageSender room="chat-nora" />
           </div>
         </div>
       </div>

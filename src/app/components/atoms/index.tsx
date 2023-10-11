@@ -1,7 +1,7 @@
 import { ToastContainer } from 'react-toastify'
-import type { ToastProps } from 'react-toastify/dist/types'
+// import type { ToastProps } from 'react-toastify/dist/types'
 
-const defaultProps: Partial<ToastProps> = {
+const defaultProps: Partial<any> = {
   position: 'bottom-center',
   autoClose: 5000,
   hideProgressBar: false,
@@ -13,7 +13,7 @@ const defaultProps: Partial<ToastProps> = {
   type: 'error',
 }
 
-const Toast = (props: Partial<ToastProps>) => (
+const Toast = (props: Partial<any>) => (
   <ToastContainer
     {...defaultProps}
     {...props}
