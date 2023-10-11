@@ -17,7 +17,7 @@ export default function Home() {
       <div className="relative">
         <div className="container mx-auto max-w-3xl space-y-10 pt-4 pb-20">
           <div className="space-y-6">
-            <h1 className="text-3xl  md:text-5xl lg:text-6xl font-extrabold text-white text-center pb-2 pt-10">
+            <h1 className="text-3xl  md:text-5xl lg:text-6xl font-extrabold text-white text-center pb-2 pt-10 sr-only">
               野良部屋
             </h1>
             {chats.map((chat, index) => (
