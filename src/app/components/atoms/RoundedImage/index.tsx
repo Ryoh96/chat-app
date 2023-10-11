@@ -5,7 +5,7 @@ type Props = React.ComponentPropsWithoutRef<typeof Image>
 const RoundedImage = (props: Props) => {
   return (
     <figure
-      className={`relative`}
+      className={`relative text-center mx-auto`}
       style={{ width: props.width + 'px', height: props.height + 'px' }}
     >
       <Image

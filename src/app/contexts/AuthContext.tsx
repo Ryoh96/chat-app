@@ -10,14 +10,14 @@ import Spinner from '../components/atoms/Spinner'
 const auth = getAuth(firebase_app)
 
 type AuthContextProps = {
-  user: User | null | undefined;
-  signInCheck: boolean;
-};
+  user: User | null | undefined
+  signInCheck: boolean
+}
 
 const AuthContext = createContext<AuthContextProps>({
   user: undefined,
   signInCheck: false,
-});
+})
 
 export const useAuthContext = () => useContext(AuthContext)
 
@@ -26,10 +26,9 @@ export const AuthContextProvider = ({
 }: {
   children: React.ReactNode
 }) => {
-  const [user, setUser] =
-    useState<User | null | undefined>(undefined);
+  const [user, setUser] = useState<User | null | undefined>(undefined)
 
-  const [signInCheck, setSignInCheck] = useState(false);
+  const [signInCheck, setSignInCheck] = useState(false)
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -43,5 +42,9 @@ export const AuthContextProvider = ({
     return () => unsubscribe()
   }, [])
 
-  return <AuthContext.Provider value={{ user, signInCheck }}>{children}</AuthContext.Provider>
+  return (
+    <AuthContext.Provider value={{ user, signInCheck }}>
+      {children}
+    </AuthContext.Provider>
+  )
 }

@@ -3,14 +3,24 @@ import Spinner from '../Spinner'
 type Props = {
   children: React.ReactNode
   loading?: boolean
-  variant?: 'default' | "large"
+  variant?: 'default' | 'large'
+  color?: string
 } & React.ComponentPropsWithoutRef<'button'>
 
-const Button = ({ children, loading, variant, disabled, ...props }: Props) => {
+const Button = ({
+  children,
+  loading,
+  variant,
+  disabled,
+  color = 'bg-black',
+  ...props
+}: Props) => {
   return (
     <button
       disabled={loading || disabled}
-      className={`bg-black py-3 px-4 rounded shadow bg-opacity-40 hover:bg-opacity-30 text-white ${variant === "large" && "w-4/5"}`}
+      className={`${color} py-3 px-4 rounded shadow bg-opacity-80 hover:bg-opacity-30 text-white ${
+        variant === 'large' && 'w-4/5'
+      }`}
       {...props}
     >
       {loading ? <Spinner color="white" variant="small" /> : children}

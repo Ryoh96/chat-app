@@ -1,14 +1,16 @@
 import './globals.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 import type { Metadata } from 'next'
 
+import Toast from './components/atoms'
 import Header from './components/layouts/Header'
 import { AuthContextProvider } from './contexts/AuthContext'
 
 export const metadata: Metadata = {
   title: 'Chat App',
   description: 'Realtime chat app',
-  manifest: "/public/manifest.json"
+  manifest: '/manifest.json',
 }
 
 export default function RootLayout({
@@ -26,6 +28,7 @@ export default function RootLayout({
             {/* <Footer /> */}
           </div>
         </AuthContextProvider>
+        <Toast />
       </body>
     </html>
   )

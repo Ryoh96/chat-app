@@ -23,7 +23,7 @@ const DropDown = ({ menuItems, label, children }: Props) => {
     >
       <Menu.Button>
         {children}
-        <span className='sr-only'>{label}</span>
+        <span className="sr-only">{label}</span>
       </Menu.Button>
       <Transition
         as={React.Fragment}
