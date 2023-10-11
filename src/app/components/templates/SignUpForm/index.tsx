@@ -59,7 +59,7 @@ function SignUpForm(props: Props) {
                 <p className="pb-2">Email</p>
               </div>
               <input
-                className="px-2 py-2 rounded-lg text-sm min-w-[240px] text-black"
+                className="px-2 py-2 rounded-lg text-sm min-w-[240px] text-black w-full"
                 {...register("email")}
                 required
                 type="email"
@@ -81,7 +81,7 @@ function SignUpForm(props: Props) {
                 <p className="pb-2">Password</p>
               </div>
               <input
-                className="px-2 py-2 rounded-lg text-sm min-w-[240px] text-black"
+                className="px-2 py-2 rounded-lg text-sm min-w-[240px] text-black w-full"
                 {...register("password")}
                 required
                 type="password"
@@ -103,7 +103,7 @@ function SignUpForm(props: Props) {
                 <p className="pb-2">Name</p>
               </div>
               <input
-                className="px-2 py-2 rounded-lg text-sm min-w-[240px] text-black"
+                className="px-2 py-2 rounded-lg text-sm min-w-[240px] text-black w-full"
                 {...register("displayName")}
                 required
                 type="text"
