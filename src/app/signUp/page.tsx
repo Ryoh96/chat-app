@@ -55,7 +55,7 @@ const SignUpPage = () => {
             </div>
           </div>
         </div>
-        <p className="text-center font-bold text-white">
+        <p className="text-center font-bold text-white pb-20">
           アカウントをお持ちの方は、
           <Link href="/signIn" className="border-b-2">
             こちらからログイン

@@ -46,7 +46,7 @@ function SignUpForm(props: Props) {
   // }
   return (
     <div className="rounded shadow">
-      <div className="px-10 py-12 rounded shadow bg-black bg-opacity-30">
+      <div className="px-5 md:px-10 py-12 rounded shadow bg-black bg-opacity-30">
         <p className="mb-5 text-2xl font-bold text-white border-b-2 pb-2">
           ユーザ登録
         </p>
@@ -59,7 +59,7 @@ function SignUpForm(props: Props) {
                 <p className="pb-2">Email</p>
               </div>
               <input
-                className="px-2 py-2 rounded-lg text-sm min-w-[240px] text-black w-full"
+                className="px-2 py-2 rounded-lg text-sm min-w-[180px] text-black  w-11/12 md:w-full"
                 {...register("email")}
                 required
                 type="email"
@@ -81,7 +81,7 @@ function SignUpForm(props: Props) {
                 <p className="pb-2">Password</p>
               </div>
               <input
-                className="px-2 py-2 rounded-lg text-sm min-w-[240px] text-black w-full"
+                className="px-2 py-2 rounded-lg text-sm min-w-[240px] text-black w-11/12 md:w-full"
                 {...register("password")}
                 required
                 type="password"
@@ -103,7 +103,7 @@ function SignUpForm(props: Props) {
                 <p className="pb-2">Name</p>
               </div>
               <input
-                className="px-2 py-2 rounded-lg text-sm min-w-[240px] text-black w-full"
+                className="px-2 py-2 rounded-lg text-sm min-w-[240px] text-black w-11/12 md:w-full"
                 {...register("displayName")}
                 required
                 type="text"

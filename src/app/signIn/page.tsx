@@ -49,7 +49,7 @@ const SignInPage = () => {
               <SignInForm onValid={handleForm} />
             </div>
           </div>
-          <p className="text-center font-bold text-white">
+          <p className="text-center font-bold text-white mb-20">
             アカウントをお持ちでない方は、
             <br className="max-[400px]:block  hidden" />
             <Link href="/signUp" className="border-b-2">
